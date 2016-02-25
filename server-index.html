@@ -38,13 +38,13 @@ for(var i = 0; i < git_btns.length; i++){
 }
 document.querySelector('.git-string').addEventListener('keydown',function(e){
 	if(e.keyCode === 13){
-		gitExec( this.value );
+		gitExec( encodeURIComponent(this.value) );
 	} else if(e.keyCode === 27){
 		this.value = '';
 	}
 });
 document.querySelector('.git-go').addEventListener('click',function(){
-	gitExec( document.querySelector('.git-string').value );
+	gitExec( encodeURIComponent(document.querySelector('.git-string').value) );
 });
 
 
